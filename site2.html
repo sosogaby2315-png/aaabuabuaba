@@ -1,0 +1,703 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sophia ☀️ | Biografia</title>
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" />
+
+  <style>
+    /* =========================
+       RESET
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #00d2ff,
+          #3a47d5,
+          #ff4ecd
+        );
+
+      position: relative;
+    }
+
+    /* =========================
+       FUNDO ANIMADO
+    ========================== */
+
+    body::before {
+      content: "";
+
+      position: fixed;
+
+      width: 200%;
+      height: 200%;
+
+      background:
+        radial-gradient(
+          circle,
+          #ffffff22 2px,
+          transparent 3px
+        );
+
+      background-size: 50px 50px;
+
+      animation: moverFundo 25s linear infinite;
+
+      z-index: -1;
+    }
+
+    @keyframes moverFundo {
+      from {
+        transform: translate(0, 0);
+      }
+
+      to {
+        transform: translate(-200px, -200px);
+      }
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      width: 100%;
+
+      padding: 25px 40px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      position: sticky;
+      top: 0;
+
+      z-index: 999;
+
+      backdrop-filter: blur(10px);
+
+      background: #ffffff11;
+
+      border-bottom: 1px solid #ffffff33;
+    }
+
+    .logo {
+      font-size: 35px;
+      font-weight: 700;
+
+      text-shadow: 0 0 20px #ffffff;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffe600;
+
+      text-shadow: 0 0 10px white;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      width: 100%;
+
+      padding: 80px 20px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+    }
+
+    .foto {
+      width: 220px;
+      height: 220px;
+
+      border-radius: 50%;
+      overflow: hidden;
+
+      border: 6px solid white;
+
+      box-shadow:
+        0 0 30px white,
+        0 0 60px #ff4ecd;
+
+      animation: flutuar 4s ease-in-out infinite;
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    @keyframes flutuar {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .hero h1 {
+      margin-top: 30px;
+
+      font-size: 70px;
+
+      text-shadow: 0 0 20px white;
+    }
+
+    .hero span {
+      color: #ffe600;
+    }
+
+    .hero p {
+      max-width: 700px;
+
+      margin-top: 15px;
+
+      font-size: 20px;
+      line-height: 1.8;
+
+      opacity: 0.95;
+    }
+
+    /* =========================
+       BOTÃO
+    ========================== */
+
+    .btn {
+      margin-top: 35px;
+
+      padding: 18px 40px;
+
+      border: none;
+      border-radius: 50px;
+
+      cursor: pointer;
+
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ff4ecd,
+          #ffe600
+        );
+
+      box-shadow: 0 0 20px #ff4ecd;
+
+      transition: 0.4s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+
+      box-shadow: 0 0 40px white;
+    }
+
+    /* =========================
+       CONTAINER
+    ========================== */
+
+    .container {
+      width: 90%;
+      max-width: 1300px;
+
+      margin: auto;
+
+      padding: 50px 0;
+    }
+
+    .titulo {
+      margin-bottom: 50px;
+
+      text-align: center;
+
+      font-size: 45px;
+
+      text-shadow: 0 0 20px white;
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(280px, 1fr)
+        );
+
+      gap: 30px;
+    }
+
+    .card {
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 30px;
+
+      border-radius: 25px;
+
+      backdrop-filter: blur(12px);
+
+      background: #ffffff15;
+
+      border: 1px solid #ffffff33;
+
+      transition: 0.5s;
+    }
+
+    .card::before {
+      content: "";
+
+      position: absolute;
+
+      width: 150%;
+      height: 150%;
+
+      top: -120%;
+      left: -120%;
+
+      transform: rotate(45deg);
+
+      background:
+        linear-gradient(
+          45deg,
+          transparent,
+          #ffffff22,
+          transparent
+        );
+
+      transition: 0.7s;
+    }
+
+    .card:hover::before {
+      top: 100%;
+      left: 100%;
+    }
+
+    .card:hover {
+      transform:
+        translateY(-10px)
+        scale(1.03);
+
+      box-shadow: 0 0 30px #ffffff55;
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+
+      font-size: 28px;
+    }
+
+    .card p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       FRASE
+    ========================== */
+
+    .frase {
+      margin-top: 80px;
+
+      padding: 50px;
+
+      text-align: center;
+
+      font-size: 35px;
+      font-style: italic;
+
+      background: #ffffff10;
+
+      backdrop-filter: blur(10px);
+
+      border-top: 1px solid #ffffff33;
+      border-bottom: 1px solid #ffffff33;
+    }
+
+    /* =========================
+       SONHOS
+    ========================== */
+
+    .sonho-box {
+      margin-top: 80px;
+
+      text-align: center;
+    }
+
+    .numero {
+      margin-top: 20px;
+
+      font-size: 90px;
+      font-weight: bold;
+
+      color: #ffe600;
+
+      text-shadow: 0 0 20px white;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      margin-top: 100px;
+
+      padding: 40px;
+
+      text-align: center;
+
+      background: #00000033;
+
+      backdrop-filter: blur(10px);
+    }
+
+    footer p {
+      opacity: 0.8;
+    }
+
+    /* =========================
+       BOLHAS
+    ========================== */
+
+    .bolha {
+      position: fixed;
+
+      bottom: -100px;
+
+      border-radius: 50%;
+
+      background: #ffffff33;
+
+      animation: subir linear infinite;
+    }
+
+    @keyframes subir {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(-120vh);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       RESPONSIVO
+    ========================== */
+
+    @media (max-width: 768px) {
+
+      header {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .frase {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <div class="logo">
+      ☀️ Sophia
+    </div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Sobre</a>
+      <a href="#">Sonhos</a>
+      <a href="#">Moda</a>
+      <a href="#">Contato</a>
+    </nav>
+
+  </header>
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero">
+
+    <div class="foto">
+      <img
+        src="https://i.pinimg.com/736x/52/4c/74/524c74e4f3dfb1b9f0a5d8d7d5d7a2e4.jpg"
+        alt="Sophia" />
+    </div>
+
+    <h1>
+      Sophia <span>☀️</span>
+    </h1>
+
+    <p>
+      Entre códigos, maquiagem, brilho, sereias e ondas do mar,
+      Sophia cria um universo cheio de criatividade,
+      energia e sonhos gigantes. 🌊✨
+    </p>
+
+    <button class="btn" onclick="mostrarMensagem()">
+      ✨ Descobrir Minha Energia ✨
+    </button>
+
+  </section>
+
+  <!-- =========================
+       SOBRE
+  ========================== -->
+
+  <section class="container">
+
+    <h1 class="titulo">
+      🌊 Sobre Mim 🌊
+    </h1>
+
+    <div class="cards">
+
+      <div class="card">
+        <h2>🧜‍♀️ Personalidade</h2>
+
+        <p>
+          Extrovertida, divertida, sonhadora e cheia de energia.
+          Ama conversar, rir, viajar e transformar ideias em arte.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>🍣 Favoritos</h2>
+
+        <p>
+          Sushi, Coca-Cola, praia, maquiagem,
+          cores vibrantes, brilho e vibe tropical.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>💻 Estudos</h2>
+
+        <p>
+          Estuda Desenvolvimento de Sistemas e mistura
+          criatividade com tecnologia.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>👗 Maior Sonho</h2>
+
+        <p>
+          Se tornar uma estilista famosa mundialmente
+          e criar roupas inspiradas no oceano.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>🐬 Paixões</h2>
+
+        <p>
+          Ama animais marinhos, sereias,
+          crianças, viagens e experiências diferentes.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>✨ Vibe</h2>
+
+        <p>
+          Moda futurista, energia tropical,
+          glitter aesthetic e criatividade sem limites.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- FRASE -->
+
+    <div class="frase">
+      “Entre códigos, maquiagem e ondas do mar,
+      Sophia transforma sonhos em estilo.” 🌊✨👗
+    </div>
+
+    <!-- CONTADOR -->
+
+    <div class="sonho-box">
+
+      <h1>✨ Nível de Sonhos ✨</h1>
+
+      <div class="numero" id="contador">
+        0
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <p>
+      🌊 Site criado especialmente para Sophia ☀️
+    </p>
+
+  </footer>
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       CONTADOR
+    ========================== */
+
+    let contador = 0;
+
+    const numero =
+      document.getElementById("contador");
+
+    const intervalo = setInterval(() => {
+
+      contador++;
+
+      numero.innerHTML = contador;
+
+      if (contador >= 100) {
+        clearInterval(intervalo);
+      }
+
+    }, 40);
+
+    /* =========================
+       BOTÃO
+    ========================== */
+
+    function mostrarMensagem() {
+
+      alert(`
+🌊✨ Sophia ☀️ ✨🌊
+
+Você é criatividade,
+energia,
+sonhos,
+moda
+e brilho em forma de pessoa 🧜‍♀️💖
+      `);
+
+    }
+
+    /* =========================
+       BOLHAS
+    ========================== */
+
+    function criarBolha() {
+
+      const bolha =
+        document.createElement("div");
+
+      bolha.classList.add("bolha");
+
+      const tamanho =
+        Math.random() * 60;
+
+      bolha.style.width =
+        tamanho + "px";
+
+      bolha.style.height =
+        tamanho + "px";
+
+      bolha.style.left =
+        Math.random() * innerWidth + "px";
+
+      bolha.style.animationDuration =
+        (Math.random() * 5) + 4 + "s";
+
+      document.body.appendChild(bolha);
+
+      setTimeout(() => {
+        bolha.remove();
+      }, 9000);
+
+    }
+
+    setInterval(criarBolha, 300);
+
+  </script>
+</body>
+</html>
